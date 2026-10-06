@@ -21,4 +21,11 @@ Developed as the capstone project for Course 7 of the C++ foundational roadmap, 
 * **Data Structures:** `Structs` for modeling data entities and `std::vector` for dynamic memory allocation and real-time state management.
 * **File Handling & Serialization:** Extensive use of `<fstream>`, coupled with custom string manipulation (Split/Join) using a unique `#//#` delimiter to parse raw text lines into usable objects.
 * **Access Control Logic:** Implementation of Bitwise operators for efficient, single-integer permission tracking and validation.
-* **Defensive Programming:**
+* **Defensive Programming:** Robust error handling (`cin.fail()`, `cin.ignore()`) to prevent infinite loops, system crashes, and invalid numeric inputs.
+* **Clean Architecture:** Modular code design featuring single-responsibility functions and `Enums` for precise menu state routing.
+
+## 💻 How to Run
+
+Clone the repository to your local machine:
+```bash
+git clone [https://github.com/moaazhijazi38-rgb/Bank-Client-Management-System-CPP.git](https://github.com/moaazhijazi38-rgb/Bank-Client-Management-System-CPP.git)
