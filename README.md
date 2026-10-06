@@ -1,4 +1,4 @@
-# 🏦 Bank Client & User Management System
+# 🏦 Bank System
 
 A comprehensive Command-Line Interface (CLI) application built entirely in C++ that simulates a core banking system. Utilizing a Flat-File Database approach, it ensures reliable data persistence and state management without external database dependencies.
 
