@@ -1,31 +1,40 @@
-# 🏦 Bank System
+# 🏦 Bank & ATM Management System
 
-A comprehensive Command-Line Interface (CLI) application built entirely in C++ that simulates a core banking system. Utilizing a Flat-File Database approach, it ensures reliable data persistence and state management without external database dependencies.
+A comprehensive Command-Line Interface (CLI) application built entirely in C++ that simulates a core banking system[cite: 1]. Utilizing a Flat-File Database approach, it ensures reliable data persistence and state management without external database dependencies[cite: 1].
 
-Developed as the capstone project for Course 7 of the C++ foundational roadmap, it demonstrates a practical implementation of structural programming, memory management, file handling, and advanced bitwise access control.
+## 🚀 Recent Updates
+- **Added ATM System (`ATMSystem.cpp`):** A fully functional ATM interface for clients to interact with their accounts securely.
+- **Shared Flat-File Database:** Both the Bank System and the ATM System now seamlessly read from and write to the same text file database. Any deposit or withdrawal made in the ATM reflects instantly in the Bank System, simulating a real-world integrated banking environment.
 
-## 🚀 Key Features
+## ✨ Features
 
-* **User Management & Security:** Role-based access control (RBAC) using bitwise operations to grant or restrict user permissions for specific system screens and features.
-* **Financial Transactions:** Secure deposit and withdrawal mechanics with real-time balance validation, plus a comprehensive system-wide "Total Balances" dashboard.
-* **Core CRUD Operations:**
-  * **Create:** Register new clients or system users with built-in smart validation to prevent duplicate primary keys.
-  * **Read:** Fetch and render client records in cleanly formatted, responsive tabular layouts.
-  * **Update:** Modify client details or user passwords/permissions on the fly, instantly syncing changes to the physical text files.
-  * **Delete:** Employs a "Logical Deletion" (Mark for Delete) mechanism to safely isolate records before re-syncing the database.
-  * **Find:** Quick query system utilizing Account Numbers or Usernames to retrieve full entity details.
+### 👨‍💼 Bank System (Admin Interface)
+*(Handled via `BankSystem.cpp`)*
+- Manage client accounts (Add, Delete, Update, Find Clients).
+- View all clients and total bank balances.
+- Secure access for bank employees.
 
-## 🛠️ Technologies & Core Concepts
+### 💳 ATM System (Client Interface)
+*(Handled via `ATMSystem.cpp`)*
+- **Secure Login:** Authentication using Account Number and PIN Code.
+- **Quick Withdraw:** Withdraw pre-defined amounts instantly.
+- **Normal Withdraw:** Withdraw custom amounts (includes business rules like multiples of 5).
+- **Deposit:** Add funds to the account securely.
+- **Check Balance:** View the current account balance.
+- **Robust Input Validation:** Complete protection against invalid inputs (e.g., entering characters instead of numbers, or negative values).
 
-* **Language:** C++
-* **Data Structures:** `Structs` for modeling data entities and `std::vector` for dynamic memory allocation and real-time state management.
-* **File Handling & Serialization:** Extensive use of `<fstream>`, coupled with custom string manipulation (Split/Join) using a unique `#//#` delimiter to parse raw text lines into usable objects.
-* **Access Control Logic:** Implementation of Bitwise operators for efficient, single-integer permission tracking and validation.
-* **Defensive Programming:** Robust error handling (`cin.fail()`, `cin.ignore()`) to prevent infinite loops, system crashes, and invalid numeric inputs.
-* **Clean Architecture:** Modular code design featuring single-responsibility functions and `Enums` for precise menu state routing.
+## 🛠️ Technologies & Concepts Used
+- **Language:** C++
+- **Data Structures:** `std::vector`, `struct`
+- **Storage:** Flat-File Database using File I/O (`<fstream>`)
+- **Programming Paradigm:** Procedural Programming with clean, modular functions.
+- **Error Handling:** Advanced input validation and stream clearing (`cin.fail()`, `cin.clear()`, `cin.ignore()`).
 
-## 💻 How to Run
+## ⚙️ How to Run
 
-Clone the repository to your local machine:
-```bash
-git clone [https://github.com/moaazhijazi38-rgb/Bank-Client-Management-System-CPP.git](https://github.com/moaazhijazi38-rgb/Bank-Client-Management-System-CPP.git)
+1. **Database Setup:** Ensure the text database file (e.g., `MyFile.text` or `Clients.txt`) is in the same directory as your executables.
+2. **Bank Interface:** Compile and run `BankSystem.cpp` to manage clients as an admin.
+3. **ATM Interface:** Compile and run `ATMSystem.cpp` to simulate a client logging into an ATM.
+
+---
+*Built with ❤️ using C++*
