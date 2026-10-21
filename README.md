@@ -1,74 +1,108 @@
 # Bank Client Management System
 
-A console-based banking management system developed in C++ using Object-Oriented Programming (OOP) principles. This project simulates a banking environment where authorized users can manage client accounts, perform financial transactions, handle user permissions, and use a currency calculator through an organized screen-based console interface.
+A secure, modular, and feature-rich banking management system developed in C++ using object-oriented programming (OOP) principles. This project simulates a real-world banking environment where users can manage customer accounts, perform transactions, handle permissions, and work with multi-currency financial operations — all through a console-based user interface.
+
+Built as a practical software engineering project, it focuses on clean architecture, maintainability, and separation of concerns by dividing the application into logical modules such as `Core`, `Lib`, and `Screens`.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-Modern%20OOP-00599C?logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/Architecture-Console%20App-512BD4" alt="Console App" />
+  <img src="https://img.shields.io/badge/Storage-Text%20Files-4B8BBE" alt="Text Files" />
+  <img src="https://img.shields.io/badge/Status-Portfolio%20Project-28A745" alt="Portfolio" />
+</p>
 
 ## Overview
 
-The system provides a complete banking workflow divided into logical folders (`Core`, `Lib`, and `Screens`) to separate the console interface from the core classes and utility libraries.
+The Bank Client Management System is designed to provide a complete banking workflow in a simplified yet realistic manner. It allows administrators and authorized users to:
+
+- Manage customer records
+- Handle user authentication and authorization
+- Perform deposits, withdrawals, and transfers
+- Track transaction history
+- Manage currency conversion
+- Navigate a structured console-based screen system
+
+The project is intentionally organized into separate layers to improve scalability and make it easier to extend functionality over time.
 
 ---
 
 ## Key Features
 
-- **Login & Permissions System:** User authentication with access control for different screens and operations (`Global.h`).
-- **Client Management:**
-  
-  - Add new client (`clsAddNewClientScreen`)
-  - Delete client (`clsDeleteClientScreen`)
-  - Update client info (`clsUpdateClientScreen`)
-  - Find client (`clsFindClientScreen`)
-  - List all clients (`clsClientListScreen`)
-    
-- **User Management:**
-  - Add new user (`clsAddNewUserScreen`)
-  - Delete user (`clsDeleteUserScreen`)
-  - Find user (`clsFindUserScreen`)
-  - List users (`clsListUsersScreen`)
-    
-- **Banking Transactions:**
-  - Deposit funds (`clsDepositeScreen`)
-  - Withdraw funds (`clsWithdrawScreen`)
-  - Transfer balances between accounts and view transfer history (`clsTransferLogScreen`)
-    
-- **Currency Exchange System:**
-  - List available currencies (`clsCurrenciesListScreen`)
-  - Find currency (`clsFindCurrencyScreen`)
-  - Currency calculator for conversions (`clsCurrencyCalculatorScreen`)
+- 🔐 **Secure login system** with role-based permissions and login history tracking.
+- 👤 **Complete customer management:** Add, update, delete, search, and list customers.
+- 🧑‍💼 **Full user management:** Create users, modify data, and enforce access control.
+- 💰 **Banking operations:** Deposit, withdraw, quick withdraw, internal transfer, and detailed transfer log.
+- 💱 **Currency system:** View available currencies, search currencies, and convert amounts using the currency calculator.
+- 🖥️ **Console UI** with organized screen-based navigation.
+- 🧩 **Modular architecture** using OOP concepts.
+- 📝 **Persistent data storage** using structured text files.
 
 ---
 
-## Project Structure
+## Architecture & Folder Structure
 
-- **Core:** Contains the core banking classes and data models (such as `clsBankClient` and user/currency management classes).
-- **Lib:** Contains reusable utility and helper classes such as `clsDate` and `clsInputValidate`.
-- **Screens:** Contains the console UI screens for navigating menus and handling operations.
-- **Data Text Files:** Stores persistent application data directly in text files:
-  - `MyFile.text` (Clients data)
-  - `Users.text` (System users and permissions)
-  - `LoginRegister.text` (Login history records)
-  - `Transfer.text` (Transfer logs)
-  - `Currencies.txt` (Exchange rates data)
-- **Project File:** `Project1.vcxproj` (Visual Studio C++ Project).
+The project is organized into separate physical folders to keep the codebase clean and easy to maintain:
+
+<pre>
+Bank-Client-Management-System-CPP/
+├── Core/
+│   └── clsBankClient (Client, User, and Currency core logic)
+├── Lib/
+│   ├── clsDate (Date and time utilities)
+│   └── clsInputValidate (Input validation and verification)
+├── Screens/
+│   ├── Client Screens (clsClientListScreen, clsAddNewClientScreen, clsDeleteClientScreen, clsUpdateClientScreen, clsFindClientScreen)
+│   ├── User Screens (clsListUsersScreen, clsAddNewUserScreen, clsDeleteUserScreen, clsFindUserScreen)
+│   ├── Transaction Screens (clsDepositeScreen, clsWithdrawScreen, clsTransferLogScreen)
+│   └── Currency Screens (clsCurrenciesListScreen, clsFindCurrencyScreen, clsCurrencyCalculatorScreen)
+├── Global.h (Global session state and current user management)
+├── Data Files/
+│   ├── MyFile.text (Client records)
+│   ├── Users.text (System users & permissions)
+│   ├── LoginRegister.text (Login history logs)
+│   ├── Transfer.text (Balance transfer logs)
+│   └── Currencies.txt (Exchange rates database)
+├── Project1.vcxproj (Visual Studio Project File)
+└── README.md
+</pre>
+
+### Folder & File Responsibilities
+- **`Core/`**: Contains the main business logic and domain models of the application, including client operations, user authentication, permissions, and currency processing.
+- **`Lib/`**: Stores reusable utility classes (`clsDate`, `clsInputValidate`, string helpers) used across the entire project.
+- **`Screens/`**: Contains the console interface screens. Each class manages a specific view or operation in the system.
+- **`Global.h`**: Holds the active user session across different screens.
+- **Data Text Files (`.text` / `.txt`)**: Act as the persistent storage layer for clients, users, login registers, transfers, and currencies.
 
 ---
 
-## Built With
+## Tech Stack
 
-- **C++** (Object-Oriented Programming - OOP)
-- **Standard Template Library (STL)** (`std::vector`, `std::string`, `fstream`)
-- **Visual Studio** (Windows Console Application)
+- **Language:** C++
+- **Paradigm:** Object-Oriented Programming (OOP — Inheritance, Encapsulation, Abstraction)
+- **Libraries:** Standard Template Library (STL — `std::vector`, `std::string`, `fstream`)
+- **Interface:** Windows Console UI
+- **Data Storage:** Flat-file persistence (Text files)
+- **IDE:** Microsoft Visual Studio
 
 ---
 
-## How to Run the Project
+## Getting Started
 
-1. Download or clone the repository files to your computer.
+### Prerequisites
+- Windows OS
+- Visual Studio (with **Desktop development with C++** workload installed)
+
+### How to Run in Visual Studio
+1. Download or clone the repository to your local machine:
+   <pre>git clone https://github.com/moaazhijazi38-rgb/Bank-Client-Management-System-CPP.git</pre>
 2. Open **Visual Studio**.
-3. Open the project file `Project1.vcxproj`.
-4. Build and run the project using `Ctrl + F5`.
+3. Click on **Open a project or solution** and select **`Project1.vcxproj`**.
+4. Ensure all data files (`MyFile.text`, `Users.text`, `Currencies.txt`, `Transfer.text`, `LoginRegister.text`) are in the project directory.
+5. Build the project (`Ctrl + Shift + B`) and run it (`Ctrl + F5`).
 
 ---
 
-## Author
+## Contact
 
-- **GitHub:** [moaazhijazi38-rgb](https://github.com/moaazhijazi38-rgb)
+If you want to connect, collaborate, or discuss software engineering ideas:
+- **GitHub:** [@moaazhijazi38-rgb](https://github.com/moaazhijazi38-rgb)
